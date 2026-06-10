@@ -1007,3 +1007,45 @@ function buildSolved(n, seq) {
 document.addEventListener('DOMContentLoaded', UI.init);
 
 })();
+
+// 1. Dummy state push karein taaki back button lock ho sake
+if (window.history && window.history.pushState) {
+    window.history.pushState({ role: "home" }, "Home", window.location.href);
+
+    // 2. Jab user back button dabaye
+    window.onpopstate = function (event) {
+        // HTML elements ko select karein (Jo aapke 1000070378.jpg me hain)
+        const confirmDialog = document.getElementById("confirm-dialog");
+        const confirmTitle = document.getElementById("confirm-title");
+        const confirmMessage = document.getElementById("confirm-message");
+        const confirmOk = document.getElementById("confirm-ok");
+        const confirmCancel = document.getElementById("confirm-cancel");
+
+        // Modal ka text set karein
+        if (confirmTitle) confirmTitle.innerText = "Exit Game?";
+        if (confirmMessage) confirmMessage.innerText = "Kya aap sach me game se bahar jana chahte hain?";
+
+        // 'hidden' class hata kar modal ko screen par dikhayein
+        if (confirmDialog) {
+            confirmDialog.classList.remove("hidden");
+        }
+
+        // 3. Agar user 'Confirm' (Exit) button par click kare
+        if (confirmOk) {
+            confirmOk.onclick = function () {
+                confirmDialog.classList.add("hidden");
+                window.history.back(); // Sach me app/page se exit kar jayein
+            };
+        }
+
+        // 4. Agar user 'Cancel' button par click kare
+        if (confirmCancel) {
+            confirmCancel.onclick = function () {
+                confirmDialog.classList.add("hidden"); // Modal chupayein
+                // Wapas se state push karein taaki lock barkarar rahe
+                window.history.pushState({ role: "home" }, "Home", window.location.href);
+            };
+        }
+    };
+}
+
