@@ -1,5 +1,5 @@
 /* Number Puzzle Pro — offline cache */
-const CACHE = 'npp-v1';
+const CACHE = 'npp-v1.2';
 const ASSETS = [
   './',
   './index.html',
