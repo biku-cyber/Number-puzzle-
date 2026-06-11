@@ -173,30 +173,81 @@
 
   <!-- ============ GAME SCREEN ============ -->
   <section id="screen-game" class="screen screen-game">
-    <header class="topbar game-topbar">
-      <button class="icon-btn" id="btn-back-home" aria-label="Back">←</button>
-      <div class="hud">
-        <div class="hud-cell"><span class="hud-label">Moves</span><span class="hud-value" id="hud-moves">0</span></div>
-        <div class="hud-cell"><span class="hud-label">Time</span><span class="hud-value" id="hud-time">00:00</span></div>
-      </div>
-      <button class="icon-btn" id="btn-pause" aria-label="Pause">⏸</button>
-    </header>
+  <header class="topbar game-topbar">
+    <button class="icon-btn" id="btn-back-home" aria-label="Back">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    </button>
+    
+    <div class="hud">
+      <div class="hud-cell"><span class="hud-label">Moves</span><span class="hud-value" id="hud-moves">0</span></div>
+      <div class="hud-cell"><span class="hud-label">Time</span><span class="hud-value" id="hud-time">00:00</span></div>
+    </div>
+    
+    <button class="icon-btn" id="btn-pause" aria-label="Pause">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1.5"></rect><rect x="14" y="4" width="4" height="16" rx="1.5"></rect></svg>
+    </button>
+  </header>
 
-    <main class="game-main">
-      <div id="board-stage" class="board-stage">
-        <div id="board" class="board" tabindex="0" aria-label="Puzzle board"></div>
-      </div>
+  <main class="game-main">
+    <div id="board-stage" class="board-stage">
+      <div id="board" class="board" tabindex="0" aria-label="Puzzle board"></div>
+    </div>
 
-      <div class="game-controls">
-        <button class="ctrl-btn" id="btn-hint" title="Hint">💡<span>Hint</span></button>
-        <button class="ctrl-btn" id="btn-undo" title="Undo">↶<span>Undo</span></button>
-        <button class="ctrl-btn" id="btn-redo" title="Redo">↷<span>Redo</span></button>
-        <button class="ctrl-btn" id="btn-shuffle" title="Shuffle">🔀<span>Shuffle</span></button>
-        <button class="ctrl-btn" id="btn-restart" title="Restart">🔄<span>Restart</span></button>
-        <button class="ctrl-btn" id="btn-fullscreen" title="Fullscreen">⛶<span>Full</span></button>
-      </div>
-    </main>
-  </section>
+    <div class="game-controls">
+      <button class="ctrl-btn btn-hint" id="btn-hint" title="Hint">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18h6M10 22h4M12 2v2M4.22 4.22l1.42 1.42M1 12h2M21 12h2M18.36 4.22l-1.42 1.42"/>
+          <path d="M12 6a5 5 0 0 0-5 5c0 2.5 1.5 3.8 2.5 5h5c1-1.2 2.5-2.5 2.5-5a5 5 0 0 0-5-5z"/>
+        </svg>
+        <span>Hint</span>
+      </button>
+      
+      <button class="ctrl-btn" id="btn-undo" title="Undo">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="3 7 3 13 9 13"></polyline>
+          <path d="M21 17a9 9 0 0 0-15-6.5L3 13"></path>
+        </svg>
+        <span>Undo</span>
+      </button>
+      
+      <button class="ctrl-btn" id="btn-redo" title="Redo">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="21 7 21 13 15 13"></polyline>
+          <path d="M3 17a9 9 0 0 1 15-6.5l3 2.5"></path>
+        </svg>
+        <span>Redo</span>
+      </button>
+      
+      <button class="ctrl-btn btn-shuffle" id="btn-shuffle" title="Shuffle">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 3 21 3 21 8"></polyline>
+          <line x1="4" y1="20" x2="21" y2="3"></line>
+          <polyline points="21 16 21 21 16 21"></polyline>
+          <line x1="15" y1="15" x2="21" y2="21"></line>
+          <line x1="4" y1="4" x2="9" y2="9"></line>
+        </svg>
+        <span>Shuffle</span>
+      </button>
+      
+      <button class="ctrl-btn btn-restart" id="btn-restart" title="Restart">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"></polyline>
+          <polyline points="1 20 1 14 7 14"></polyline>
+          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+        </svg>
+        <span>Restart</span>
+      </button>
+      
+      <button class="ctrl-btn" id="btn-fullscreen" title="Fullscreen">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+        </svg>
+        <span>Full</span>
+      </button>
+    </div>
+  </main>
+</section>
+
 
   <!-- ============ PAUSE OVERLAY ============ -->
   <div id="pause-overlay" class="modal hidden">
