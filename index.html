@@ -78,23 +78,37 @@
 
   <!-- ============ HOME SCREEN ============ -->
   <section id="screen-home" class="screen screen-home active">
-    <header class="topbar">
-      <button class="icon-btn" id="open-info" aria-label="Open info">☰</button>
-      <div class="brand">
-        <img src="assets/icons/logo.png" alt="" />
-        <h1>Number Puzzle <span>PRO</span></h1>
-      </div>
-      <button class="icon-btn" id="open-dashboard" aria-label="Open dashboard">📊</button>
-    </header>
+  <header class="topbar">
+    <button class="icon-btn" id="open-info" aria-label="Open info">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+    
+    <div class="brand">
+      <img src="assets/icons/logo.png" alt="" />
+      <h1>Number Puzzle <span>PRO</span></h1>
+    </div>
+    
+    <button class="icon-btn" id="open-dashboard" aria-label="Open dashboard">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="20" x2="18" y2="10"></line>
+        <line x1="12" y1="20" x2="12" y2="4"></line>
+        <line x1="6" y1="20" x2="6" y2="14"></line>
+      </svg>
+    </button>
+  </header>
 
-    <main class="home-main">
-      <!-- LIVE PREVIEW BOARD -->
-      <div class="preview-wrap">
-        <div class="preview-frame">
-          <div id="preview-board" class="preview-board" aria-label="Live preview"></div>
-        </div>
-        <p class="preview-label">Live Preview</p>
+  <main class="home-main">
+    <div class="preview-wrap">
+      <div class="preview-frame">
+        <div id="preview-board" class="preview-board" aria-label="Live preview"></div>
       </div>
+      <p class="preview-label">Live Preview</p>
+    </div>
+
 
       <!-- SETTINGS -->
       <div class="settings">
