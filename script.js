@@ -1048,4 +1048,20 @@ if (window.history && window.history.pushState) {
         }
     };
 }
+// URL CHECKER FOR INFORMATION SIDEBAR RETRIEVAL
+document.addEventListener("DOMContentLoaded", () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  
+  if (urlParams.get('panel') === 'info') {
+    const infoPanel = document.getElementById('info-panel');
+    const backdrop = document.querySelector('.panel-backdrop');
+    
+    // Panel ko open class aur overlay backdrop ko show class dena
+    if (infoPanel) infoPanel.classList.add('open');
+    if (backdrop) backdrop.classList.add('show');
+    
+    // Clean URL so refresh won't reopen the drawer loop
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+});
 
