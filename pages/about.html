@@ -3,9 +3,21 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>About — Number Puzzle Pro</title>
 <link rel="stylesheet" href="../style.css">
-<style>body{padding:24px;overflow:auto;height:auto;}h1{font-family:var(--font-display);color:var(--gold-soft);}a{color:var(--gold-soft);}</style>
+<style>
+  body{padding:24px;overflow:auto;height:auto;}
+  h1{font-family:var(--font-display);color:var(--gold-soft);}
+  /* Premium Back Link Style */
+  .sub-back-link { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--gold-soft); font-size: 16px; font-weight: 600; transition: transform 0.2s ease, color 0.2s ease; padding: 8px 0; margin-bottom: 12px; }
+  .sub-back-link:hover { color: #ffcc66; transform: translateX(-4px); }
+  .sub-back-link svg { width: 20px; height: 20px; }
+</style>
 </head><body class="theme-dark">
-<a href="../index.html">← Back</a>
+
+<a href="../index.html?panel=info" class="sub-back-link" aria-label="Go Back">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+  <span>Back</span>
+</a>
+
 <h1>About Number Puzzle Pro</h1>
 <p>Number Puzzle Pro is a modern take on the classic 15-puzzle sliding game. Built as a single-page web app, it works offline and feels like a native app on phones, tablets and desktops.</p>
 <h2>Features</h2>
@@ -18,11 +30,12 @@
   <li>Achievements, full statistics dashboard, and offline PWA support.</li>
 </ul>
 <p>© 2026 Number Puzzle Pro.</p>
-  <script>
-    history.pushState(null, null, window.location.href);
 
-    window.onpopstate = function () {
-        window.location.href = "../index.html";
-    };
-  </script>
+<script>
+  // Mobile/Browser standard back button ko redirect karne ka logic
+  history.pushState(null, null, window.location.href);
+  window.onpopstate = function () {
+      window.location.href = "../index.html?panel=info";
+  };
+</script>
 </body></html>
