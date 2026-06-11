@@ -416,6 +416,75 @@ button { font-family: inherit; cursor:pointer; }
 }
 .panel-backdrop.show { opacity:1; pointer-events:auto; }
 
+/* ===== SIDE PANELS UPGRADED DESIGN ===== */
+.side-panel {
+  position:fixed; top:0; bottom:0; width: min(86vw, 360px);
+  background: var(--surface);
+  z-index: 80;
+  display:flex; flex-direction:column;
+  box-shadow: var(--shadow-lg);
+  transition: transform 320ms cubic-bezier(.2,.8,.2,1);
+}
+.side-panel-left  { left:0;  transform: translateX(-105%); border-right:1px solid var(--border); }
+.side-panel-right { right:0; transform: translateX(105%);  border-left:1px solid var(--border); }
+.side-panel.open  { transform: translateX(0); }
+
+.panel-header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding: max(14px, env(safe-area-inset-top)) 14px 10px;
+  border-bottom:1px solid var(--border);
+}
+.panel-header h2 { margin:0; font-family: var(--font-display); color: var(--gold-soft); font-size:18px; }
+
+/* Enhanced Vector Icon Sizing inside sidebar */
+.panel-list .icon-svg {
+  width: 18px; height: 18px; color: var(--text-soft);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+  flex-shrink: 0;
+}
+
+/* Links transformed into tactile clickable rows */
+.panel-list a {
+  display: flex !important; align-items: center !important; gap: 12px !important;
+  padding: 12px 18px !important; color: var(--text) !important; text-decoration: none !important;
+  border-bottom: 1px solid rgba(255,255,255,.03);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hover Nudge Effect */
+.panel-list a:hover {
+  background: var(--surface-2);
+  transform: translateX(4px);
+}
+.panel-list a:hover .icon-svg {
+  color: var(--gold-soft);
+  transform: scale(1.1);
+}
+
+/* Interactive Tactile Push-Down Click Animation */
+.panel-list a:active {
+  transform: translateX(2px) scale(0.98);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.panel-meta { padding: 14px 18px; color: var(--text-soft); font-size:13px; }
+.panel-meta p { margin: 4px 0; }
+
+/* Action Buttons feedback animation updates */
+.panel-actions { display:flex; flex-direction:column; gap:8px; padding: 12px 18px; }
+.panel-actions .btn {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.panel-actions .btn:hover { transform: translateY(-1px); }
+.panel-actions .btn:active { transform: translateY(1px) scale(0.97) !important; }
+
+/* Close cross [✕] interactive animation */
+.panel-header .icon-btn { transition: transform 0.2s ease; }
+.panel-header .icon-btn:hover { transform: rotate(90deg); color: var(--gold-soft); }
+
+
 /* ===== MODALS ===== */
 .modal {
   position:fixed; inset:0; z-index: 200;
