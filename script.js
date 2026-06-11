@@ -1023,7 +1023,7 @@ if (window.history && window.history.pushState) {
 
         // Modal ka text set karein
         if (confirmTitle) confirmTitle.innerText = "Exit Game?";
-        if (confirmMessage) confirmMessage.innerText = "Kya aap sach me game se bahar jana chahte hain?";
+        if (confirmMessage) confirmMessage.innerText = "Are you sure you want to exit the game?";
 
         // 'hidden' class hata kar modal ko screen par dikhayein
         if (confirmDialog) {
