@@ -510,3 +510,73 @@ button { font-family: inherit; cursor:pointer; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* ============ PREMIUM SVG ICONS & ANIMATIONS ============ */
+
+/* Icons size and default transition properties */
+.screen-game .icon-svg {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.2s ease, color 0.2s ease, filter 0.2s ease;
+}
+
+/* Structural fix for text and icon alignment inside buttons */
+.ctrl-btn, .icon-btn {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+}
+
+/* General Hover Elevation Effect */
+.ctrl-btn:hover, .icon-btn:hover {
+  transform: translateY(-2px);
+}
+.ctrl-btn:active, .icon-btn:active {
+  transform: translateY(1px) scale(0.96);
+}
+
+/* 1. New Hint Button Animation (Glow + Pulse) */
+@keyframes hint-glow {
+  0% { transform: scale(1); filter: drop-shadow(0 0 2px #e5c687); }
+  50% { transform: scale(1.12); filter: drop-shadow(0 0 8px #ffcc66); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 2px #e5c687); }
+}
+.btn-hint:hover .icon-svg {
+  color: #ffcc66 !important;
+  animation: hint-glow 1.2s infinite ease-in-out;
+}
+
+/* 2. New Undo Button Animation (Elastic Nudge Left) */
+#btn-undo:hover .icon-svg {
+  transform: translateX(-4px) rotate(-25deg);
+}
+
+/* 3. Redo Button Animation (Elastic Nudge Right) */
+#btn-redo:hover .icon-svg {
+  transform: translateX(4px) rotate(25deg);
+}
+
+/* 4. Shuffle Button Animation (Wobble effect) */
+@keyframes shuffle-wobble {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-12deg); }
+  75% { transform: rotate(12deg); }
+  100% { transform: rotate(0deg); }
+}
+.btn-shuffle:hover .icon-svg {
+  animation: shuffle-wobble 0.3s ease-in-out 2;
+}
+
+/* 5. Restart Button Animation (180deg Spin) */
+.btn-restart:hover .icon-svg {
+  transform: rotate(180deg);
+}
+
+/* 6. Fullscreen Button Animation (Expand) */
+#btn-fullscreen:hover .icon-svg {
+  transform: scale(1.18);
+}
