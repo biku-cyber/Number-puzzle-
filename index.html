@@ -36,31 +36,57 @@
 
   <!-- LEFT INFO PANEL -->
   <aside id="info-panel" class="side-panel side-panel-left" aria-label="Information">
-    <header class="panel-header">
-      <h2>Information</h2>
-      <button class="icon-btn" data-close-panel="info-panel" aria-label="Close">✕</button>
-    </header>
-          <nav class="panel-list">
-        <a href="pages/about.html" target="_blank" rel="noopener">&#9432; About The App</a>
-        <a href="pages/guide.html" target="_blank" rel="noopener">&#9881; How To Play</a>
-        <a href="pages/privacy.html" target="_blank" rel="noopener">&#9960; Privacy Policy</a>
-        <a href="pages/privacy.html#terms" target="_blank" rel="noopener">&#9878; Terms &amp; Conditions</a>
-        <a href="#" id="install-app-link">&#11091; Install App</a>
-        <a href="https://play.google.com/" target="_blank" rel="noopener">&#9654; Play Store</a>
-        <a href="mailto:dev@numberpuzzlepro.app">&#9993; Contact Developer</a>
+  <header class="panel-header">
+    <h2>Information</h2>
+    <button class="icon-btn" data-close-panel="info-panel" aria-label="Close">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </header>
+  
+  <nav class="panel-list">
+    <a href="pages/about.html" target="_blank" rel="noopener" id="menu-about">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      <span>About The App</span>
+    </a>
+    
+    <a href="pages/guide.html" target="_blank" rel="noopener" id="menu-guide">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="3"></rect><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15.5" cy="11.5" r="1" fill="currentColor"></circle><circle cx="18.5" cy="13.5" r="1" fill="currentColor"></circle></svg>
+      <span>How To Play</span>
+    </a>
+    
+    <a href="pages/privacy.html" target="_blank" rel="noopener" id="menu-privacy">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      <span>Privacy Policy</span>
+    </a>
+    
+    <a href="pages/privacy.html#terms" target="_blank" rel="noopener" id="menu-terms">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+      <span>Terms &amp; Conditions</span>
+    </a>
+    
+    <a href="https://play.google.com/" target="_blank" rel="noopener" id="menu-playstore">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"></polygon><polygon points="10 8 15 12 10 16 10 8" fill="currentColor" opacity="0.4"></polygon></svg>
+      <span>Play Store</span>
+    </a>
+    
+    <a href="mailto:dev@numberpuzzlepro.app" id="menu-contact">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><polyline points="10 8.5 7.5 11 10 13.5"></polyline><polyline points="14 8.5 16.5 11 14 13.5"></polyline></svg>
+      <span>Contact Developer</span>
+    </a>
 
-      <div class="panel-meta">
-        <p><strong>Version</strong> <span id="app-version">1.0.0</span></p>
-        <p><strong>Changelog</strong> — Initial release</p>
-      </div>
-      <div class="panel-actions">
-        <button class="btn btn-ghost" id="btn-export-data">Export Data</button>
-        <button class="btn btn-ghost" id="btn-import-data">Import Backup</button>
-        <input type="file" id="import-file" accept="application/json" hidden />
-        <button class="btn btn-danger" id="btn-reset-data">Reset All Data</button>
-      </div>
-    </nav>
-  </aside>
+    <div class="panel-meta">
+      <p><strong>Version</strong> <span id="app-version">1.0.0</span></p>
+      <p><strong>Changelog</strong> — Initial release</p>
+    </div>
+    
+    <div class="panel-actions">
+      <button class="btn btn-ghost" id="btn-export-data">Export Data</button>
+      <button class="btn btn-ghost" id="btn-import-data">Import Backup</button>
+      <input type="file" id="import-file" accept="application/json" hidden />
+      <button class="btn btn-danger" id="btn-reset-data">Reset All Data</button>
+    </div>
+  </nav>
+</aside>
 
   <!-- RIGHT DASHBOARD PANEL -->
   <aside id="dashboard-panel" class="side-panel side-panel-right" aria-label="Dashboard">
