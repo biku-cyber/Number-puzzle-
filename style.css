@@ -506,48 +506,181 @@ button { font-family: inherit; cursor:pointer; }
 .modal-card p { color: var(--text-soft); margin: 0 0 16px; }
 .modal-actions { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; }
 
-/* ===== RESULT ===== */
-.screen-result { align-items:center; justify-content:center; }
-.fx-canvas { position:absolute; inset:0; pointer-events:none; z-index:1; }
+/* ==========================================
+   RESULT SCREEN STYLES (WITH PREMIUM TROPHY)
+   ========================================== */
+
+.screen-result { 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+
+.fx-canvas { 
+  position: absolute; 
+  inset: 0; 
+  pointer-events: none; 
+  z-index: 1; 
+}
+
+/* Result Main Card */
 .result-card {
-  position:relative; z-index:2;
+  position: relative; 
+  z-index: 2;
   background: linear-gradient(160deg, var(--surface), var(--surface-2));
-  border:2px solid var(--gold-deep);
+  border: 2px solid var(--gold-deep);
   border-radius: var(--radius-lg);
   padding: 26px 22px;
   width: min(94vw, 420px);
-  text-align:center;
+  text-align: center;
   box-shadow: var(--shadow-lg);
-  animation: pop 400ms cubic-bezier(.2,.8,.2,1);
+  animation: pop 400ms cubic-bezier(.2, .8, .2, 1);
 }
-.trophy-wrap { position:relative; height:96px; display:flex; align-items:center; justify-content:center; margin-bottom:6px; }
-.trophy { font-size: 72px; animation: trophyRise 800ms cubic-bezier(.2,.8,.2,1) both; filter: drop-shadow(0 6px 12px rgba(0,0,0,.5)); }
-@keyframes trophyRise { from { transform: translateY(40px) scale(.3); opacity:0;} 60%{transform: translateY(-8px) scale(1.1); opacity:1;} to {transform:none;} }
-.trophy-glow { position:absolute; width:200px; height:200px; border-radius:50%;
-  background: radial-gradient(circle, rgba(217,164,65,.55), transparent 65%);
-  animation: glow 2s ease-in-out infinite; }
-@keyframes glow { 0%,100%{opacity:.5;} 50%{opacity:.9;} }
-.congrats { margin:6px 0 4px; font-family: var(--font-display); font-size:26px; color: var(--gold-soft); }
-.subtitle { color: var(--text-soft); margin: 0 0 16px; }
+
+@keyframes pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Trophy Container */
+.trophy-wrap { 
+  position: relative; 
+  height: 110px; /* Floating effect ke liye space badhaya hai */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 10px; 
+}
+
+/* Trophy 3D & Smooth Animation */
+.trophy { 
+  font-size: 76px; 
+  display: inline-block;
+  /* Shuru me Pop hoga, fir hamesha float karega */
+  animation: 
+    trophyPop 900ms cubic-bezier(.34, 1.56, 0.64, 1) both,
+    trophyIdle 3.5s ease-in-out 900ms infinite alternate;
+  transform-origin: bottom center;
+}
+
+/* Trophy Background Glow */
+.trophy-glow { 
+  position: absolute; 
+  width: 220px; 
+  height: 220px; 
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217,164,65,0.35) 0%, rgba(217,164,65,0.1) 50%, transparent 70%);
+  animation: glowPulse 2s ease-in-out infinite alternate; 
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Keyframes: Shuruati Entrance (Pop-up Effect) */
+@keyframes trophyPop { 
+  0% { transform: translateY(60px) scale(0) rotate(-15deg); opacity: 0; }
+  50% { transform: translateY(-15px) scale(1.2) rotate(10deg); opacity: 1; }
+  70% { transform: translateY(4px) scale(0.9) rotate(-5deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); opacity: 1; } 
+}
+
+/* Keyframes: Continuous Floating & Gentle Tilt */
+@keyframes trophyIdle {
+  0% { 
+    transform: translateY(0) rotate(0deg); 
+    filter: drop-shadow(0 6px 12px rgba(217,164,65,0.4)); 
+  }
+  50% { 
+    transform: translateY(-8px) rotate(4deg) scale(1.03); 
+    filter: drop-shadow(0 16px 24px rgba(217,164,65,0.7)); 
+  }
+  100% { 
+    transform: translateY(2px) rotate(-3deg) scale(0.98); 
+    filter: drop-shadow(0 8px 14px rgba(217,164,65,0.5)); 
+  }
+}
+
+/* Keyframes: Glow ka pulse hona */
+@keyframes glowPulse { 
+  0% { transform: scale(0.85); opacity: 0.4; } 
+  100% { transform: scale(1.15); opacity: 0.85; } 
+}
+
+/* Typography & Headings */
+.congrats { 
+  margin: 6px 0 4px; 
+  font-family: var(--font-display); 
+  font-size: 26px; 
+  color: var(--gold-soft); 
+}
+
+.subtitle { 
+  color: var(--text-soft); 
+  margin: 0 0 16px; 
+}
+
+/* Score/Result Grid */
 .result-grid {
-  display:grid; grid-template-columns: 1fr 1fr; gap:8px;
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 8px;
   margin-bottom: 14px;
 }
+
 .result-grid > div {
-  background: var(--surface); border:1px solid var(--border); border-radius:10px;
-  padding: 8px; display:flex; flex-direction:column;
+  background: var(--surface); 
+  border: 1px solid var(--border); 
+  border-radius: 10px;
+  padding: 8px; 
+  display: flex; 
+  flex-direction: column;
 }
-.result-grid span { font-size:11px; color: var(--muted); letter-spacing:1px; text-transform:uppercase; }
-.result-grid strong { color: var(--gold-soft); font-family: var(--font-display); font-size:17px; }
+
+.result-grid span { 
+  font-size: 11px; 
+  color: var(--muted); 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+}
+
+.result-grid strong { 
+  color: var(--gold-soft); 
+  font-family: var(--font-display); 
+  font-size: 17px; 
+}
+
+/* New Record Badge */
 .new-record {
   background: linear-gradient(90deg, var(--gold), var(--gold-soft), var(--gold));
   background-size: 200% 100%;
-  color:#2a1810; font-weight:700; padding: 8px;
-  border-radius: 8px; margin-bottom: 14px;
-  animation: shimmer 1.6s linear infinite, badgePop 600ms cubic-bezier(.2,.8,.2,1);
+  color: #2a1810; 
+  font-weight: 700; 
+  padding: 8px;
+  border-radius: 8px; 
+  margin-bottom: 14px;
+  animation: shimmer 1.6s linear infinite, badgePop 600ms cubic-bezier(.2, .8, .2, 1);
 }
-@keyframes shimmer { to { background-position: 200% 0; } }
-@keyframes badgePop { from {transform:scale(.6); opacity:0;} to {transform:none; opacity:1;} }
+
+.new-record.hidden {
+  display: none;
+}
+
+@keyframes shimmer { 
+  to { background-position: 200% 0; } 
+}
+
+@keyframes badgePop { 
+  from { transform: scale(.6); opacity: 0; } 
+  to { transform: none; opacity: 1; } 
+}
+
+/* Buttons / Actions */
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Note: `.btn`, `.btn-primary`, aur `.btn-ghost` ke baki global styles aapke core CSS se apply honge */
 
 /* ===== TOASTS ===== */
 .toast-stack { position:fixed; top: max(18px, env(safe-area-inset-top)); left:50%; transform: translateX(-50%); z-index: 300; display:flex; flex-direction:column; gap:8px; }
