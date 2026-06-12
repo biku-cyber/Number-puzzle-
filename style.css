@@ -771,37 +771,57 @@ button { font-family: inherit; cursor:pointer; }
   transform: scale(0.96) !important;
 }
 
-/* SVG ka basic size aur color setup */
+
+
+.dz-icon-wrapper {
+  margin: 0 auto 12px auto;
+  display: block;
+  text-align: center;
+}
+
 .dz-svg-icon {
   width: 48px;
   height: 48px;
-  color: #64748b; /* Aap apne theme ke hisab se color change kar sakte ho */
-  display: block;
-  margin: 0 auto 12px auto;
+  color: #F5DEB3;
   transform-origin: center;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
-/* Jab user box par hover karega, tab animation chalegi */
+#photo-dropzone {
+  border: 2px dashed #4B3621;
+  border-radius: 8px;
+  padding: 20px;
+  transition: border-color 0.2s ease;
+}
+
+.photo-dropzone:hover #photo-dropzone {
+  border-color: #DAA520;
+}
+
 .photo-dropzone:hover .dz-svg-icon {
-  color: #4f46e5; /* Hover color change (optional) */
-  animation: popup-thud 0.55s cubic-bezier(0.25, 1.35, 0.45, 1.1) forwards;
+  color: #DAA520;
+  animation: popup-thud 0.5s cubic-bezier(0.25, 1.35, 0.45, 1.1) forwards;
 }
 
-/* Pop-up Thud Animation Keyframes */
+.dz-content p {
+  color: #D3D3D3;
+  opacity: 0.8;
+  font-size: 0.9em;
+}
+
 @keyframes popup-thud {
   0% {
     transform: scale(0.3);
     opacity: 0;
   }
   50% {
-    transform: scale(1.35); /* Ekdum se bada hoga (Pop Effect) */
+    transform: scale(1.35);
   }
   75% {
-    transform: scale(0.85); /* Jhatke se chota hoga (Thud/Impact Effect) */
+    transform: scale(0.85);
   }
   100% {
-    transform: scale(1); /* Settle down to normal size */
+    transform: scale(1);
     opacity: 1;
   }
 }
