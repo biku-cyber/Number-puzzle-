@@ -323,30 +323,64 @@
 
   <!-- ============ RESULT SCREEN ============ -->
   <section id="screen-result" class="screen screen-result">
-    <canvas id="fx-canvas" class="fx-canvas"></canvas>
-    <div class="result-card">
-      <div class="trophy-wrap">
-        <div class="trophy" aria-hidden="true">🏆</div>
-        <div class="trophy-glow"></div>
-      </div>
-      <h2 class="congrats">Congratulations!</h2>
-      <p class="subtitle">You solved the puzzle.</p>
-      <div class="result-grid">
-        <div><span>Moves</span><strong id="res-moves">0</strong></div>
-        <div><span>Time</span><strong id="res-time">00:00</strong></div>
-        <div><span>Board</span><strong id="res-board">3×3</strong></div>
-        <div><span>Sequence</span><strong id="res-sequence">Classic</strong></div>
-        <div><span>Mode</span><strong id="res-mode">Number</strong></div>
-        <div><span>Record</span><strong id="res-record">—</strong></div>
-      </div>
-      <div id="new-record-badge" class="new-record hidden">★ NEW RECORD ★</div>
-      <div class="modal-actions">
-        <button class="btn btn-primary" id="btn-play-again">Play Again</button>
-        <button class="btn btn-ghost" id="btn-result-home">Main Menu</button>
-        <button class="btn btn-ghost" id="btn-share">Share</button>
-      </div>
+    <div class="result-backdrop">
+        <div class="blast-flash"></div>
+        <div class="shockwave-ring ring-1"></div>
+        <div class="shockwave-ring ring-2"></div>
     </div>
-  </section>
+    
+    <div class="result-card">
+        <div class="trophy-stage">
+            
+            <img src="assets/icons/trophy.png" alt="Number Champion Trophy" class="trophy-image-png">
+
+            <div class="blast-particles-emitter">
+                <div class="p-star" style="--angle: 0deg;   --dist: 140px; --delay: 0s;">✦</div>
+                <div class="p-star" style="--angle: 40deg;  --dist: 160px; --delay: 0.1s;">✦</div>
+                <div class="p-star" style="--angle: 80deg;  --dist: 130px; --delay: 0.05s;">✦</div>
+                <div class="p-star" style="--angle: 120deg; --dist: 170px; --delay: 0.15s;">✦</div>
+                <div class="p-star" style="--angle: 160deg; --dist: 140px; --delay: 0s;">✦</div>
+                <div class="p-star" style="--angle: 200deg; --dist: 150px; --delay: 0.2s;">✦</div>
+                <div class="p-star" style="--angle: 240deg; --dist: 135px; --delay: 0.05s;">✦</div>
+                <div class="p-star" style="--angle: 280deg; --dist: 165px; --delay: 0.1s;">✦</div>
+                <div class="p-star" style="--angle: 320deg; --dist: 155px; --delay: 0.15s;">✦</div>
+
+                <span class="p-dot" style="--angle: 20deg;  --dist: 190px; --delay: 0.05s;"></span>
+                <span class="p-dot" style="--angle: 60deg;  --dist: 180px; --delay: 0s;"></span>
+                <span class="p-dot" style="--angle: 100deg; --dist: 200px; --delay: 0.1s;"></span>
+                <span class="p-dot" style="--angle: 140deg; --dist: 175px; --delay: 0.15s;"></span>
+                <span class="p-dot" style="--angle: 180deg; --dist: 185px; --delay: 0.05s;"></span>
+                <span class="p-dot" style="--angle: 220deg; --dist: 165px; --delay: 0s;"></span>
+                <span class="p-dot" style="--angle: 260deg; --dist: 195px; --delay: 0.2s;"></span>
+                <span class="p-dot" style="--angle: 300deg; --dist: 170px; --delay: 0.1s;"></span>
+                <span class="p-dot" style="--angle: 340deg; --dist: 180px; --delay: 0.15s;"></span>
+            </div>
+            
+            <div class="epic-aura"></div>
+        </div>
+
+        <h2 class="congrats">Congratulations!</h2>
+        <p class="subtitle">You solved the puzzle.</p>
+        
+        <div class="result-grid">
+            <div><span>Moves</span><strong id="res-moves">142</strong></div>
+            <div><span>Time</span><strong id="res-time">03:51</strong></div>
+            <div><span>Board</span><strong id="res-board">3×3</strong></div>
+            <div><span>Sequence</span><strong id="res-sequence">Classic</strong></div>
+            <div><span>Mode</span><strong id="res-mode">Number</strong></div>
+            <div><span>Record</span><strong id="res-record">04:12</strong></div>
+        </div>
+        
+        <div id="new-record-badge" class="new-record">★ NEW RECORD ★</div>
+        
+        <div class="modal-actions">
+            <button class="btn btn-primary" id="btn-play-again">Play Again</button>
+            <button class="btn btn-ghost" id="btn-result-home">Main Menu</button>
+            <button class="btn btn-ghost" id="btn-share">Share</button>
+        </div>
+    </div>
+</section>
+
 
   <!-- ============ TOASTS ============ -->
   <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
