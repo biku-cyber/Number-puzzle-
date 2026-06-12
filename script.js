@@ -613,7 +613,7 @@ const UI = (() => {
     setTimeout(() => showResult(st, isRecord, prev), 700);
   }
 
-  function showResult(st, isRecord, prev) {
+   function showResult(st, isRecord, prev) {
     $('#res-moves').textContent    = st.moves;
     $('#res-time').textContent     = formatTime(st.elapsed);
     $('#res-board').textContent    = `${st.size}×${st.size}`;
@@ -621,10 +621,14 @@ const UI = (() => {
     $('#res-mode').textContent     = st.mode;
     $('#res-record').textContent   = prev ? `${prev.moves} / ${formatTime(prev.time)}` : 'First!';
     $('#new-record-badge').classList.toggle('hidden', !isRecord);
+
     showScreen('result');
+
+    document.querySelector('.trophy-image-png')?.classList.add('animate');
+
     FX.start();
     setTimeout(() => boardEl.classList.remove('win-zoom'), 1200);
-  }
+   }
 
   /* ---------- achievements ---------- */
   const ACHIEVEMENTS = [
