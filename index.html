@@ -181,21 +181,28 @@
 
         <!-- Photo upload (hidden unless Photo mode) -->
         <div class="setting-row photo-row hidden" id="photo-upload-row">
-          <label>Your Photo</label>
-          <div class="photo-dropzone" id="photo-dropzone">
-            <input type="file" id="photo-input" accept="image/png,image/jpeg,image/webp" hidden />
-            <input type="file" id="photo-camera" accept="image/*" capture="user" hidden />
-            <div class="dz-content">
-              <span class="dz-icon">📷</span>
-              <p>Drag &amp; drop, click to upload, or use camera</p>
-              <div class="dz-actions">
-                <button class="btn btn-ghost" id="btn-pick-photo">Upload</button>
-                <button class="btn btn-ghost" id="btn-camera-photo">Camera</button>
-              </div>
-            </div>
-          </div>
-        </div>
+  <label>Your Photo</label>
+  <div class="photo-dropzone" id="photo-dropzone">
+    <input type="file" id="photo-input" accept="image/png,image/jpeg,image/webp" hidden />
+    <input type="file" id="photo-camera" accept="image/*" capture="user" hidden />
+    <div class="dz-content">
+      
+      <div class="dz-icon-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dz-svg-icon">
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+          <circle cx="12" cy="13" r="4"></circle>
+        </svg>
       </div>
+      
+      <p>Drag &amp; drop, click to upload, or use camera</p>
+      <div class="dz-actions">
+        <button class="btn btn-ghost" id="btn-pick-photo">Upload</button>
+        <button class="btn btn-ghost" id="btn-camera-photo">Camera</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       <!-- Play buttons -->
       <div class="home-cta">
