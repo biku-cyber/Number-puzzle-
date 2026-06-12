@@ -318,10 +318,16 @@ const Game = (() => {
 const FX = (() => {
   let canvas, ctx, raf, parts = [], running = false;
   function init(c) {
-    canvas = c; ctx = c.getContext('2d');
-    resize();
-    window.addEventListener('resize', resize);
+  if (!c) {
+    console.warn("FX Canvas element (#fx-canvas) not found in DOM.");
+    return;
   }
+  canvas = c; 
+  ctx = c.getContext('2d');
+  resize();
+  window.addEventListener('resize', resize);
+}
+
   function resize() {
     if (!canvas) return;
     canvas.width = canvas.offsetWidth * devicePixelRatio;
