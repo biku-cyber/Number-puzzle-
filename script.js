@@ -428,7 +428,7 @@ const UI = (() => {
   }
   function renderPickers() {
     const n = SIZES[sIdx.size];
-    $('#picker-size').textContent       = `${n} Ã— ${n}`;
+    $('#picker-size').textContent       = `${n} × ${n}`;
     const seqList = MODES[sIdx.mode] === 'Photo' ? PHOTO_SEQ : SEQUENCES;
     if (!seqList.includes(SEQUENCES[sIdx.sequence])) sIdx.sequence = 0;
     $('#picker-sequence').textContent   = seqList[sIdx.sequence] || 'Classic';
