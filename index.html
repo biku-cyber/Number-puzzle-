@@ -15,6 +15,7 @@
 
 <!-- ============ LOADING SCREEN ============ -->
 <div id="loading-screen" class="loader">
+  
   <div class="loader-content">
     <div class="loader-wrapper">
       <div class="loader-ring"></div>
@@ -22,67 +23,70 @@
     </div>
     <p>Loading Number Puzzle Pro...</p>
   </div>
+
   <div class="loader-footer">
     <p>Created by Vikas</p>
   </div>
+
 </div>
+
 
 <!-- ============ APP SHELL ============ -->
 <div id="app" class="app hidden">
 
   <!-- LEFT INFO PANEL -->
   <aside id="info-panel" class="side-panel side-panel-left" aria-label="Information">
-    <header class="panel-header">
-      <h2>Information</h2>
-      <button class="icon-btn" data-close-panel="info-panel" aria-label="Close">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      </button>
-    </header>
+  <header class="panel-header">
+    <h2>Information</h2>
+    <button class="icon-btn" data-close-panel="info-panel" aria-label="Close">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </header>
+  
+  <nav class="panel-list">
+    <a href="pages/about.html" target="_blank" rel="noopener" id="menu-about">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      <span>About The App</span>
+    </a>
     
-    <nav class="panel-list">
-      <a href="pages/about.html" target="_blank" rel="noopener" id="menu-about">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-        <span>About The App</span>
-      </a>
-      
-      <a href="pages/guide.html" target="_blank" rel="noopener" id="menu-guide">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="3"></rect><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15.5" cy="11.5" r="1" fill="currentColor"></circle><circle cx="18.5" cy="13.5" r="1" fill="currentColor"></circle></svg>
-        <span>How To Play</span>
-      </a>
-      
-      <a href="pages/privacy.html" target="_blank" rel="noopener" id="menu-privacy">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-        <span>Privacy Policy</span>
-      </a>
-      
-      <a href="pages/privacy.html#terms" target="_blank" rel="noopener" id="menu-terms">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-        <span>Terms &amp; Conditions</span>
-      </a>
-      
-      <a href="https://play.google.com/" target="_blank" rel="noopener" id="menu-playstore">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"></polygon><polygon points="10 8 15 12 10 16 10 8" fill="currentColor" opacity="0.4"></polygon></svg>
-        <span>Play Store</span>
-      </a>
-      
-      <a href="mailto:dev@numberpuzzlepro.app" id="menu-contact">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><polyline points="10 8.5 7.5 11 10 13.5"></polyline><polyline points="14 8.5 16.5 11 14 13.5"></polyline></svg>
-        <span>Contact Developer</span>
-      </a>
+    <a href="pages/guide.html" target="_blank" rel="noopener" id="menu-guide">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="3"></rect><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15.5" cy="11.5" r="1" fill="currentColor"></circle><circle cx="18.5" cy="13.5" r="1" fill="currentColor"></circle></svg>
+      <span>How To Play</span>
+    </a>
+    
+    <a href="pages/privacy.html" target="_blank" rel="noopener" id="menu-privacy">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      <span>Privacy Policy</span>
+    </a>
+    
+    <a href="pages/privacy.html#terms" target="_blank" rel="noopener" id="menu-terms">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+      <span>Terms &amp; Conditions</span>
+    </a>
+    
+    <a href="https://play.google.com/" target="_blank" rel="noopener" id="menu-playstore">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"></polygon><polygon points="10 8 15 12 10 16 10 8" fill="currentColor" opacity="0.4"></polygon></svg>
+      <span>Play Store</span>
+    </a>
+    
+    <a href="mailto:dev@numberpuzzlepro.app" id="menu-contact">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><polyline points="10 8.5 7.5 11 10 13.5"></polyline><polyline points="14 8.5 16.5 11 14 13.5"></polyline></svg>
+      <span>Contact Developer</span>
+    </a>
 
-      <div class="panel-meta">
-        <p><strong>Version</strong> <span id="app-version">1.0.0</span></p>
-        <p><strong>Changelog</strong> — Initial release</p>
-      </div>
-      
-      <div class="panel-actions">
-        <button class="btn btn-ghost" id="btn-export-data">Export Data</button>
-        <button class="btn btn-ghost" id="btn-import-data">Import Backup</button>
-        <input type="file" id="import-file" accept="application/json" hidden />
-        <button class="btn btn-danger" id="btn-reset-data">Reset All Data</button>
-      </div>
-    </nav>
-  </aside>
+    <div class="panel-meta">
+      <p><strong>Version</strong> <span id="app-version">1.0.0</span></p>
+      <p><strong>Changelog</strong> — Initial release</p>
+    </div>
+    
+    <div class="panel-actions">
+      <button class="btn btn-ghost" id="btn-export-data">Export Data</button>
+      <button class="btn btn-ghost" id="btn-import-data">Import Backup</button>
+      <input type="file" id="import-file" accept="application/json" hidden />
+      <button class="btn btn-danger" id="btn-reset-data">Reset All Data</button>
+    </div>
+  </nav>
+</aside>
 
   <!-- RIGHT DASHBOARD PANEL -->
   <aside id="dashboard-panel" class="side-panel side-panel-right" aria-label="Dashboard">
@@ -100,39 +104,41 @@
 
   <!-- ============ HOME SCREEN ============ -->
   <section id="screen-home" class="screen screen-home active">
-    <header class="topbar">
-      <button class="icon-btn" id="open-info" aria-label="Open info">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
-      
-      <div class="brand">
-        <img src="assets/icons/logo.png" alt="" />
-        <h1>Number Puzzle <span>PRO</span></h1>
-      </div>
-      
-      <button class="icon-btn" id="open-dashboard" aria-label="Open dashboard">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="20" x2="18" y2="10"></line>
-          <line x1="12" y1="20" x2="12" y2="4"></line>
-          <line x1="6" y1="20" x2="6" y2="14"></line>
-        </svg>
-      </button>
-    </header>
+  <header class="topbar">
+    <button class="icon-btn" id="open-info" aria-label="Open info">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+    
+    <div class="brand">
+      <img src="assets/icons/logo.png" alt="" />
+      <h1>Number Puzzle <span>PRO</span></h1>
+    </div>
+    
+    <button class="icon-btn" id="open-dashboard" aria-label="Open dashboard">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="20" x2="18" y2="10"></line>
+        <line x1="12" y1="20" x2="12" y2="4"></line>
+        <line x1="6" y1="20" x2="6" y2="14"></line>
+      </svg>
+    </button>
+  </header>
 
-    <main class="home-main">
-      <div class="preview-wrap">
-        <div class="preview-frame">
-          <div id="preview-board" class="preview-board" aria-label="Live preview"></div>
-        </div>
-        <p class="preview-label">Live Preview</p>
+  <main class="home-main">
+    <div class="preview-wrap">
+      <div class="preview-frame">
+        <div id="preview-board" class="preview-board" aria-label="Live preview"></div>
       </div>
+      <p class="preview-label">Live Preview</p>
+    </div>
+
 
       <!-- SETTINGS -->
       <div class="settings">
+
         <!-- Board Size -->
         <div class="setting-row">
           <label>Board Size</label>
@@ -173,34 +179,37 @@
           </div>
         </div>
 
-        <!-- Photo upload -->
+        <!-- Photo upload (hidden unless Photo mode) -->
         <div class="setting-row photo-row hidden" id="photo-upload-row">
-          <label>Your Photo</label>
-          <div class="photo-dropzone" id="photo-dropzone">
-            <input type="file" id="photo-input" accept="image/png,image/jpeg,image/webp" hidden />
-            <input type="file" id="photo-camera" accept="image/*" capture="user" hidden />
-            <div class="dz-content">
-              <div class="dz-icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dz-svg-icon">
-                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                  <circle cx="12" cy="13" r="4"></circle>
-                </svg>
-              </div>
-              <p>Drag &amp; drop, click to upload, or use camera</p>
-              <div class="dz-actions">
-                <button class="btn btn-ghost" id="btn-pick-photo">Upload</button>
-                <button class="btn btn-ghost" id="btn-camera-photo">Camera</button>
-              </div>
-            </div>
-          </div>
-        </div>
+  <label>Your Photo</label>
+  <div class="photo-dropzone" id="photo-dropzone">
+    <input type="file" id="photo-input" accept="image/png,image/jpeg,image/webp" hidden />
+    <input type="file" id="photo-camera" accept="image/*" capture="user" hidden />
+    <div class="dz-content">
+      
+      <div class="dz-icon-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dz-svg-icon">
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+          <circle cx="12" cy="13" r="4"></circle>
+        </svg>
       </div>
+      
+      <p>Drag &amp; drop, click to upload, or use camera</p>
+      <div class="dz-actions">
+        <button class="btn btn-ghost" id="btn-pick-photo">Upload</button>
+        <button class="btn btn-ghost" id="btn-camera-photo">Camera</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       <!-- Play buttons -->
       <div class="home-cta">
         <button class="btn btn-primary btn-large" id="btn-play">▶ Play</button>
         <button class="btn btn-ghost" id="btn-continue" hidden>↺ Continue Last Game</button>
       </div>
+
     </main>
 
     <footer class="hint-row">
@@ -211,80 +220,81 @@
 
   <!-- ============ GAME SCREEN ============ -->
   <section id="screen-game" class="screen screen-game">
-    <header class="topbar game-topbar">
-      <button class="icon-btn" id="btn-back-home" aria-label="Back">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+  <header class="topbar game-topbar">
+    <button class="icon-btn" id="btn-back-home" aria-label="Back">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    </button>
+    
+    <div class="hud">
+      <div class="hud-cell"><span class="hud-label">Moves</span><span class="hud-value" id="hud-moves">0</span></div>
+      <div class="hud-cell"><span class="hud-label">Time</span><span class="hud-value" id="hud-time">00:00</span></div>
+    </div>
+    
+    <button class="icon-btn" id="btn-pause" aria-label="Pause">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1.5"></rect><rect x="14" y="4" width="4" height="16" rx="1.5"></rect></svg>
+    </button>
+  </header>
+
+  <main class="game-main">
+    <div id="board-stage" class="board-stage">
+      <div id="board" class="board" tabindex="0" aria-label="Puzzle board"></div>
+    </div>
+
+    <div class="game-controls">
+      <button class="ctrl-btn btn-hint" id="btn-hint" title="Hint">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18h6M10 22h4M12 2v2M4.22 4.22l1.42 1.42M1 12h2M21 12h2M18.36 4.22l-1.42 1.42"/>
+          <path d="M12 6a5 5 0 0 0-5 5c0 2.5 1.5 3.8 2.5 5h5c1-1.2 2.5-2.5 2.5-5a5 5 0 0 0-5-5z"/>
+        </svg>
+        <span>Hint</span>
       </button>
       
-      <div class="hud">
-        <div class="hud-cell"><span class="hud-label">Moves</span><span class="hud-value" id="hud-moves">0</span></div>
-        <div class="hud-cell"><span class="hud-label">Time</span><span class="hud-value" id="hud-time">00:00</span></div>
-      </div>
-      
-      <button class="icon-btn" id="btn-pause" aria-label="Pause">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1.5"></rect><rect x="14" y="4" width="4" height="16" rx="1.5"></rect></svg>
+      <button class="ctrl-btn" id="btn-undo" title="Undo">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="3 7 3 13 9 13"></polyline>
+          <path d="M21 17a9 9 0 0 0-15-6.5L3 13"></path>
+        </svg>
+        <span>Undo</span>
       </button>
-    </header>
+      
+      <button class="ctrl-btn" id="btn-redo" title="Redo">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="21 7 21 13 15 13"></polyline>
+          <path d="M3 17a9 9 0 0 1 15-6.5l3 2.5"></path>
+        </svg>
+        <span>Redo</span>
+      </button>
+      
+      <button class="ctrl-btn btn-shuffle" id="btn-shuffle" title="Shuffle">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 3 21 3 21 8"></polyline>
+          <line x1="4" y1="20" x2="21" y2="3"></line>
+          <polyline points="21 16 21 21 16 21"></polyline>
+          <line x1="15" y1="15" x2="21" y2="21"></line>
+          <line x1="4" y1="4" x2="9" y2="9"></line>
+        </svg>
+        <span>Shuffle</span>
+      </button>
+      
+      <button class="ctrl-btn btn-restart" id="btn-restart" title="Restart">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"></polyline>
+          <polyline points="1 20 1 14 7 14"></polyline>
+          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+        </svg>
+        <span>Restart</span>
+      </button>
+      
+      <button class="ctrl-btn" id="btn-fullscreen" title="Fullscreen">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+        </svg>
+        <span>Full</span>
+      </button>
+    </div>
+  </main>
+</section>
 
-    <main class="game-main">
-      <div id="board-stage" class="board-stage">
-        <div id="board" class="board" tabindex="0" aria-label="Puzzle board"></div>
-      </div>
-
-      <div class="game-controls">
-        <button class="ctrl-btn btn-hint" id="btn-hint" title="Hint">
-          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 18h6M10 22h4M12 2v2M4.22 4.22l1.42 1.42M1 12h2M21 12h2M18.36 4.22l-1.42 1.42"/>
-            <path d="M12 6a5 5 0 0 0-5 5c0 2.5 1.5 3.8 2.5 5h5c1-1.2 2.5-2.5 2.5-5a5 5 0 0 0-5-5z"/>
-          </svg>
-          <span>Hint</span>
-        </button>
-        
-        <button class="ctrl-btn" id="btn-undo" title="Undo">
-          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="3 7 3 13 9 13"></polyline>
-            <path d="M21 17a9 9 0 0 0-15-6.5L3 13"></path>
-          </svg>
-          <span>Undo</span>
-        </button>
-        
-        <button class="ctrl-btn" id="btn-redo" title="Redo">
-          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="21 7 21 13 15 13"></polyline>
-            <path d="M3 17a9 9 0 0 1 15-6.5l3 2.5"></path>
-          </svg>
-          <span>Redo</span>
-        </button>
-        
-        <button class="ctrl-btn btn-shuffle" id="btn-shuffle" title="Shuffle">
-          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="16 3 21 3 21 8"></polyline>
-            <line x1="4" y1="20" x2="21" y2="3"></line>
-            <polyline points="21 16 21 21 16 21"></polyline>
-            <line x1="15" y1="15" x2="21" y2="21"></line>
-            <line x1="4" y1="4" x2="9" y2="9"></line>
-          </svg>
-          <span>Shuffle</span>
-        </button>
-        
-        <button class="ctrl-btn btn-restart" id="btn-restart" title="Restart">
-          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="23 4 23 10 17 10"></polyline>
-            <polyline points="1 20 1 14 7 14"></polyline>
-            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
-          </svg>
-          <span>Restart</span>
-        </button>
-        
-        <button class="ctrl-btn" id="btn-fullscreen" title="Fullscreen">
-          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
-          </svg>
-          <span>Full</span>
-        </button>
-      </div>
-    </main>
-  </section>
 
   <!-- ============ PAUSE OVERLAY ============ -->
   <div id="pause-overlay" class="modal hidden">
@@ -312,7 +322,8 @@
   </div>
 
   <!-- ============ RESULT SCREEN ============ -->
-  <section id="screen-result" class="screen screen-result">
+   <section id="screen-result" class="screen screen-result">
+
     <div class="result-backdrop">
         <div class="blast-flash"></div>
         <div class="shockwave-ring ring-1"></div>
@@ -320,10 +331,19 @@
     </div>
 
     <div class="result-card">
+
         <div class="trophy-stage">
+
             <div class="epic-aura"></div>
-            <img src="assets/icons/trophy.png" alt="Trophy" class="trophy-image-png">
+
+            <img 
+                src="assets/icons/trophy.png" 
+                alt="Trophy" 
+                class="trophy-image-png"
+            >
+
             <div class="blast-particles-emitter">
+
                 <div class="p-star" style="--angle: 0deg; --dist: 140px; --delay: 0s;">✦</div>
                 <div class="p-star" style="--angle: 40deg; --dist: 160px; --delay: 0.1s;">✦</div>
                 <div class="p-star" style="--angle: 80deg; --dist: 130px; --delay: 0.05s;">✦</div>
@@ -343,46 +363,76 @@
                 <span class="p-dot" style="--angle: 260deg; --dist: 195px; --delay: 0.2s;"></span>
                 <span class="p-dot" style="--angle: 300deg; --dist: 170px; --delay: 0.1s;"></span>
                 <span class="p-dot" style="--angle: 340deg; --dist: 180px; --delay: 0.15s;"></span>
+
             </div>
+
         </div>
 
         <h2 class="congrats">Congratulations!</h2>
         <p class="subtitle">You solved the puzzle.</p>
 
         <div class="result-grid">
-            <div><span>Moves</span><strong id="res-moves">142</strong></div>
-            <div><span>Time</span><strong id="res-time">03:51</strong></div>
-            <div><span>Board</span><strong id="res-board">3×3</strong></div>
-            <div><span>Sequence</span><strong id="res-sequence">Classic</strong></div>
-            <div><span>Mode</span><strong id="res-mode">Number</strong></div>
-            <div><span>Record</span><strong id="res-record">04:12</strong></div>
+
+            <div>
+                <span>Moves</span>
+                <strong id="res-moves">142</strong>
+            </div>
+
+            <div>
+                <span>Time</span>
+                <strong id="res-time">03:51</strong>
+            </div>
+
+            <div>
+                <span>Board</span>
+                <strong id="res-board">3×3</strong>
+            </div>
+
+            <div>
+                <span>Sequence</span>
+                <strong id="res-sequence">Classic</strong>
+            </div>
+
+            <div>
+                <span>Mode</span>
+                <strong id="res-mode">Number</strong>
+            </div>
+
+            <div>
+                <span>Record</span>
+                <strong id="res-record">04:12</strong>
+            </div>
+
         </div>
 
-        <div id="new-record-badge" class="new-record hidden">★ NEW RECORD ★</div>
+        <div id="new-record-badge" class="new-record hidden">
+            ★ NEW RECORD ★
+        </div>
 
         <div class="modal-actions">
-            <button class="btn btn-primary" id="btn-play-again">Play Again</button>
-            <button class="btn btn-ghost" id="btn-result-home">Main Menu</button>
-            <button class="btn btn-ghost" id="btn-share">Share</button>
+
+            <button class="btn btn-primary" id="btn-play-again">
+                Play Again
+            </button>
+
+            <button class="btn btn-ghost" id="btn-result-home">
+                Main Menu
+            </button>
+
+            <button class="btn btn-ghost" id="btn-share">
+                Share
+            </button>
+
         </div>
+
     </div>
-  </section>
+</section>
 
-  <!-- ============ FX PARTICLE CANVAS OVERLAY ============ -->
-  <canvas id="fx-canvas" style="position: fixed; inset: 0; pointer-events: none; z-index: 190; width: 100%; height: 100%;"></canvas>
-
-    
   <!-- ============ TOASTS ============ -->
-<div id="toast-stack" class="toast-stack" aria-live="polite"></div>
-
-<!-- Confetti/Fireworks ke liye missing Canvas element -->
-<canvas id="fx-canvas" style="position:fixed; inset:0; pointer-events:none; z-index:99; width:100%; height:100%;"></canvas>
+  <div id="toast-stack" class="toast-stack" aria-live="polite"></div>
 
 </div><!-- /app -->
 
 <script src="script.js" defer></script>
 </body>
-
-
 </html>
-};
