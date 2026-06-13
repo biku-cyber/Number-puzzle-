@@ -648,7 +648,7 @@ const UI = (() => {
     for (const x of ACHIEVEMENTS) {
       if (!a[x.id] && x.check(st)) {
         a[x.id] = { unlockedAt: Date.now() };
-        toast(`ðŸ… Achievement: ${x.label}`);
+        toast(`🏆 Achievement: ${x.label}`);
       }
     }
   }
@@ -660,8 +660,8 @@ const UI = (() => {
     const winRate = s.totalGames ? Math.round((s.totalWins / s.totalGames) * 100) : 0;
     const avgTime = s.totalWins ? formatTime(Math.round(s.totalTime / s.totalWins)) : '--:--';
     const avgMov  = s.totalWins ? Math.round(s.totalMoves / s.totalWins) : 0;
-    const mostSize = topKey(s.bySize) || 'â€”';
-    const mostMode = topKey(s.byMode) || 'â€”';
+    const mostSize = topKey(s.bySize) || '—' ;
+    const mostMode = topKey(s.byMode) || '—';
 
     const highRows = Object.entries(d.highs).map(([k, v]) =>
       `<div class="hs-row"><span class="lbl">${k}</span><span class="val">${v.moves} / ${formatTime(v.time)}</span></div>`
@@ -673,7 +673,7 @@ const UI = (() => {
 
     const achList = ACHIEVEMENTS.map(a => {
       const unlocked = d.achievements[a.id];
-      return `<div class="hs-row"><span class="lbl">${unlocked ? 'ðŸ…' : 'ðŸ”’'} ${a.label}</span><span class="val">${unlocked ? 'Unlocked' : 'â€”'}</span></div>`;
+      return `<div class="hs-row"><span class="lbl">${unlocked ? '🏆' : '🔒'} ${a.label}</span><span class="val">${unlocked ? 'Unlocked' : '—' }</span></div>`;
     }).join('');
 
     $('#dashboard-body').innerHTML = `
@@ -685,12 +685,12 @@ const UI = (() => {
           <div><span>Avg Time</span><strong>${avgTime}</strong></div>
           <div><span>Avg Moves</span><strong>${avgMov}</strong></div>
           <div><span>Longest Streak</span><strong>${s.longestStreak}</strong></div>
-          <div><span>Fastest Ever</span><strong>${s.fastest ? formatTime(s.fastest) : 'â€”'}</strong></div>
-          <div><span>Least Moves</span><strong>${s.leastMoves ?? 'â€”'}</strong></div>
+          <div><span>Fastest Ever</span><strong>${s.fastest ? formatTime(s.fastest) : '—'}</strong></div>
+          <div><span>Least Moves</span><strong>${s.leastMoves ?? '—'}</strong></div>
           <div><span>Most Played Size</span><strong>${mostSize}</strong></div>
           <div><span>Most Played Mode</span><strong>${mostMode}</strong></div>
           <div><span>Total Play Time</span><strong>${formatTime(s.totalTime)}</strong></div>
-          <div><span>Last Game</span><strong>${s.history[0] ? `${s.history[0].size}Ã—${s.history[0].size}` : 'â€”'}</strong></div>
+          <div><span>Last Game</span><strong>${s.history[0] ? `${s.history[0].size}Ã—${s.history[0].size}` : '—''}</strong></div>
         </div>
       </div>
       <div class="stat-card"><h3>High Scores</h3>${highRows}</div>
