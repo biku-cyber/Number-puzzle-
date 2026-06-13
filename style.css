@@ -480,7 +480,7 @@ button { font-family: inherit; cursor:pointer; }
 .panel-actions .btn:hover { transform: translateY(-1px); }
 .panel-actions .btn:active { transform: translateY(1px) scale(0.97) !important; }
 
-/* Close cross [âœ•] interactive animation */
+/* Close cross [✕] interactive animation */
 .panel-header .icon-btn { transition: transform 0.2s ease; }
 .panel-header .icon-btn:hover { transform: rotate(90deg); color: var(--gold-soft); }
 
