@@ -87,6 +87,7 @@ button { font-family: inherit; cursor:pointer; }
   display: flex;
   align-items: center;
   justify-content: center;
+    transform: translateY(40px);
 }
 
 .loader-logo { 
@@ -130,6 +131,7 @@ button { font-family: inherit; cursor:pointer; }
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0;
+    transform: translateY(30px);
   opacity: 0.6; /* Halka aur premium premium clean text look ke liye */
 }
 
