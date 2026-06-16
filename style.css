@@ -125,13 +125,13 @@ button { font-family: inherit; cursor:pointer; }
   width: 100%;
 }
 
-.loader-footer p {
+.loader-footer {
   color: var(--text-soft);
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0;
-    transform: translateY(30px);
+    transform: translateY(-30px);
   opacity: 0.6; /* Halka aur premium premium clean text look ke liye */
 }
 
