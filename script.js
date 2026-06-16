@@ -814,25 +814,7 @@ function attachBoardSwipe() {
   });
                   }
 
-   /* Move only if adjacent to blank */
-function tryMove(tileIndex) {
-  const st = Game.get();
-  const n = st.size;
-  const blank = st.blank;
 
-  const tr = Math.floor(tileIndex / n);
-  const tc = tileIndex % n;
-
-  const br = Math.floor(blank / n);
-  const bc = blank % n;
-
-  const isAdjacent =
-    (Math.abs(tr - br) + Math.abs(tc - bc)) === 1;
-
-  if (!isAdjacent) return; // ❌ invalid move
-
-  handleTileClick(tileIndex); // ✅ safe move
-         }
 
   /* ---------- keyboard ---------- */
   function attachKeys() {
