@@ -12,23 +12,40 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="theme-dark">
+  <canvas id="fx-canvas"></canvas>
 
 <!-- ============ LOADING SCREEN ============ -->
+<!-- ============ LOADING SCREEN ============ -->
 <div id="loading-screen" class="loader">
-  
+
   <div class="loader-content">
+
+    <!-- Logo + ring wrapper -->
     <div class="loader-wrapper">
       <div class="loader-ring"></div>
-      <img src="assets/icons/logo.png" alt="Number Puzzle Pro" class="loader-logo" />
+
+      <img 
+        src="assets/icons/logo.png" 
+        alt="Number Puzzle Pro" 
+        class="loader-logo" 
+      />
     </div>
-    <p>Loading Number Puzzle Pro...</p>
+
+    <!-- Text -->
+    <p class="loader-text">Loading Number Puzzle Pro...</p>
+
+    <!-- Optional progress bar (nice touch) -->
+    <div class="loader-bar">
+      <div class="loader-progress"></div>
+    </div>
+
   </div>
 
+  <!-- Footer credit -->
   <div class="loader-footer">
     <p>Created by Vikas</p>
   </div>
-<canvas id="fx-canvas"></canvas>
-  
+
 </div>
 
 
