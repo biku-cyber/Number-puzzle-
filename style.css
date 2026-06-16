@@ -58,42 +58,89 @@ button { font-family: inherit; cursor:pointer; }
 .hidden { display:none !important; }
 
 /* ===== LOADER ===== */
-:root {
-  --bg: #1a0f08;
-  --text-soft: #c9b48a;
-  --shadow-lg: 0 20px 50px rgba(0,0,0,.55);
-}
-
-/* FULL SCREEN */
 .loader {
   position: fixed;
   inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
   background: var(--bg);
 }
 
-/* LOGO EXACT CENTER */
-.loader-logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  box-shadow: var(--shadow-lg);
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
 }
 
-/* NAME EKDAM NEECHE */
-.loader-name {
-  position: absolute;
-  bottom: 20px;   /* 👈 ekdam niche control yaha se */
-  left: 50%;
-  transform: translateX(-50%);
+.loader-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+}
 
-  font-size: 14px;
+/* simple rotating ring (light CPU) */
+.loader-ring {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 3px solid transparent;
+  border-top: 3px solid var(--gold);
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loader-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-lg);
+  z-index: 2;
+}
+
+.loader-text {
   color: var(--text-soft);
   letter-spacing: 1px;
+  font-size: 14px;
+}
+
+/* progress bar */
+.loader-bar {
+  width: 180px;
+  height: 4px;
+  background: var(--surface-2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.loader-progress {
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+  animation: loadMove 1.5s infinite ease-in-out;
+}
+
+@keyframes loadMove {
+  0% { transform: translateX(-60%); }
+  100% { transform: translateX(260%); }
+}
+
+.loader-footer {
+  position: absolute;
+  bottom: 14px;
+  font-size: 12px;
+  color: var(--text-soft);
+  opacity: 0.8;
 }
 
 /* =======================
@@ -103,25 +150,6 @@ img {
   -webkit-user-drag: none;
   user-select: none;
   -webkit-touch-callout: none;
-}
-
-/* =======================
-   CREDIT (BOTTOM FIXED)
-======================= */
-.created-by {
-  position: fixed;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-
-  font-size: 12px;
-  color: var(--text-soft);
-  letter-spacing: 1px;
-  opacity: 0.8;
-
-  z-index: 10000;
-  text-shadow: none;
 }
 
 /* ===== APP SHELL ===== */
