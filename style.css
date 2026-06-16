@@ -58,40 +58,27 @@ button { font-family: inherit; cursor:pointer; }
 .hidden { display:none !important; }
 
 /* ===== LOADER ===== */
-/* ===== LOADING SCREEN STYLES ===== */
-.loader {
-  position: fixed; 
-  inset: 0; 
-  z-index: 9999;
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: centre; /* Content ko center aur name ko bottom me push karega */
-  background: var(--bg);
-  box-sizing: border-box;
+/* ===== ROOT PREMIUM COLOR SYSTEM ===== */
+:root {
+
+  /* Background (cinematic dark brown-black) */
+  --bg: radial-gradient(circle at top, #1a120b 0%, #0b0705 60%, #050302 100%);
+
+  /* Gold Accent */
+  --gold: #f5c542;
+
+  /* Glass / Card */
+  --card: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+
+  /* Text */
+  --text: #f5e6c8;
+  --text-soft: rgba(245, 230, 200, 0.72);
+
+  /* Shadow */
+  --shadow-soft: 0 6px 15px rgba(0,0,0,0.25);
 }
 
-.loader-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  flex: 1; /* Poori bachi hui central space occupy karega */
-}
-
-/* Logo aur Ring ko ek ke upar ek perfectly center karne ke liye */
-.loader-wrapper {
-  position: relative;
-  width: 160px;
-  height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-    transform: translateY(40px);
-}
-
-/* ===== LOADER (FINAL REFINED VERSION) ===== */
-
+/* ===== LOADER ===== */
 .loader {
   position: fixed;
   inset: 0;
@@ -102,11 +89,11 @@ button { font-family: inherit; cursor:pointer; }
   align-items: center;
   justify-content: space-between;
 
-  background: radial-gradient(circle at top, #141b2d 0%, #070a12 100%);
+  background: var(--bg);
   overflow: hidden;
 }
 
-/* Background FX Canvas */
+/* FX CANVAS */
 #fx-canvas {
   position: absolute;
   inset: 0;
@@ -127,7 +114,7 @@ button { font-family: inherit; cursor:pointer; }
   z-index: 2;
 }
 
-/* WRAPPER (Logo + Ring Container) */
+/* WRAPPER */
 .loader-wrapper {
   position: relative;
   width: 160px;
@@ -150,18 +137,19 @@ button { font-family: inherit; cursor:pointer; }
 
   animation: pulse 1.6s ease-in-out infinite;
 
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35));
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.35));
 }
 
-/* SPINNING RING */
+/* RING */
 .loader-ring {
   position: absolute;
   width: 140px;
   height: 140px;
 
   border-radius: 50%;
-  border: 3px solid rgba(255, 255, 255, 0.06);
-  border-top: 3px solid #f5c542;
+
+  border: 3px solid rgba(255,255,255,0.06);
+  border-top: 3px solid var(--gold);
 
   animation: spin 1.2s linear infinite;
 
@@ -175,7 +163,7 @@ button { font-family: inherit; cursor:pointer; }
   font-size: 15px;
   letter-spacing: 1px;
 
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--text-soft);
   text-align: center;
 }
 
@@ -194,10 +182,10 @@ button { font-family: inherit; cursor:pointer; }
   letter-spacing: 2px;
   text-transform: uppercase;
 
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(245, 230, 200, 0.4);
 }
 
-/* ANIMATIONS */
+/* ===== ANIMATIONS ===== */
 @keyframes spin {
   100% {
     transform: rotate(360deg);
@@ -212,7 +200,6 @@ button { font-family: inherit; cursor:pointer; }
     transform: scale(1.07);
   }
 }
-
 /* ===== APP SHELL ===== */
 .app { position:relative; width:100%; height:100dvh; overflow:hidden; }
 
