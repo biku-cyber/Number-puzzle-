@@ -90,59 +90,126 @@ button { font-family: inherit; cursor:pointer; }
     transform: translateY(40px);
 }
 
-.loader-logo { 
-  width: 100px; 
-  height: 100px; 
-  border-radius: 0% !important; 
-  object-fit: contain;
-  box-shadow: var(--shadow-lg); 
-  animation: pulse 1.6s ease-in-out infinite; 
-  z-index: 2; /* Logo hamesha ring ke upar rahega */
+/* ===== LOADER (FINAL REFINED VERSION) ===== */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  background: radial-gradient(circle at top, #141b2d 0%, #070a12 100%);
+  overflow: hidden;
 }
 
-.loader-ring {
-  position: absolute; 
-  width: 140px; /* Logo ke size ke hisab se adjusted aur balanced */
-  height: 140px; 
-  border-radius: 50%;
-  border: 3px solid rgba(255, 255, 255, 0.05); /* Piche ka halka track */
-  border-top-color: var(--gold); /* Spinning indicator */
-  animation: spin 1.8s linear infinite;
-  z-index: 1;
+/* Background FX Canvas */
+#fx-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
-.loader-content p { 
-  color: var(--text-soft); 
-  letter-spacing: 1px; 
-  font-size: 16px;
-  margin: 0;
-  text-align: center;
-}
-
-/* Footer Section jahan aapka naam hai */
-.loader-footer {
-  text-align: center;
+/* CENTER AREA */
+.loader-content {
+  flex: 1;
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 22px;
+  z-index: 2;
 }
 
+/* WRAPPER (Logo + Ring Container) */
+.loader-wrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+/* LOGO */
+.loader-logo {
+  width: 90px;
+  height: 90px;
+
+  object-fit: contain;
+  z-index: 2;
+
+  animation: pulse 1.6s ease-in-out infinite;
+
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35));
+}
+
+/* SPINNING RING */
+.loader-ring {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.06);
+  border-top: 3px solid #f5c542;
+
+  animation: spin 1.2s linear infinite;
+
+  filter: drop-shadow(0 0 10px rgba(245, 197, 66, 0.35));
+}
+
+/* LOADING TEXT */
+.loader-content p {
+  margin: 0;
+
+  font-size: 15px;
+  letter-spacing: 1px;
+
+  color: rgba(255, 255, 255, 0.72);
+  text-align: center;
+}
+
+/* FOOTER */
 .loader-footer {
-  color: var(--text-soft);
-  font-size: 13px;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 22px;
+  z-index: 2;
+}
+
+.loader-footer p {
+  margin: 0;
+
+  font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin: 0;
-    transform: translateY(-30px);
-  opacity: 0.6; /* Halka aur premium premium clean text look ke liye */
+
+  color: rgba(255, 255, 255, 0.35);
 }
 
-/* Animations */
-@keyframes spin { to { transform: rotate(360deg); } }
+/* ANIMATIONS */
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes pulse {
-  0%,100% {
+  0%, 100% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.08);
+    transform: scale(1.07);
   }
 }
 
