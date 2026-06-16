@@ -58,22 +58,21 @@ button { font-family: inherit; cursor:pointer; }
 .hidden { display:none !important; }
 
 /* ===== LOADER ===== */
-
-/* =======================
-   LOADER (CENTER)
-======================= */
 .loader {
   position: fixed;
   inset: 0;
   z-index: 9999;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   gap: 18px;
   background: var(--bg);
 }
 
+/* logo */
 .loader-logo {
   width: 110px;
   height: 110px;
@@ -81,56 +80,10 @@ button { font-family: inherit; cursor:pointer; }
   box-shadow: var(--shadow-lg);
 }
 
+/* text */
 .loader p {
   color: var(--text-soft);
   letter-spacing: 1px;
-}
-
-/* =======================
-   ONLY PRO RING ANIMATION
-======================= */
-.loader-ring {
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-
-  border: 3px solid rgba(255, 255, 255, 0.08);
-  border-top-color: var(--gold);
-
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* =======================
-   TROPHY (STATIC BIG)
-======================= */
-.trophy-stage {
-  position: relative;
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  overflow: visible;
-}
-
-.trophy-image-png {
-  height: 160px;
-  max-width: 100%;
-  z-index: 5;
-  transform-origin: center;
-
-  animation: none;
-
-  -webkit-user-drag: none;
-  user-select: none;
-  -webkit-touch-callout: none;
 }
 
 /* =======================
@@ -143,7 +96,7 @@ img {
 }
 
 /* =======================
-   CREDIT BOTTOM
+   CREDIT (BOTTOM FIXED)
 ======================= */
 .created-by {
   position: fixed;
@@ -158,6 +111,7 @@ img {
   opacity: 0.8;
 
   z-index: 10000;
+  text-shadow: none;
 }
 
 /* ===== APP SHELL ===== */
