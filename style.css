@@ -610,7 +610,7 @@ button { font-family: inherit; cursor:pointer; }
   max-width: 100%;
   z-index: 5;
   transform-origin: center;
-  animation: none) both;
+  animation: none;
 }
 
 /* Trophy pop */
@@ -641,9 +641,10 @@ button { font-family: inherit; cursor:pointer; }
   font-size: 24px;
   opacity: 0;
   transform: translate(-50%, -50%) rotate(var(--angle)) translateY(0) scale(0);
-  animation: radialParticleBurst 800ms cubic-bezier(0.05,0.9,0.2,1) var(--delay,0s) forwards;
+  animation: none;
   will-change: transform, opacity;
 }
+
 
 .p-dot {
   width: 10px;
@@ -666,7 +667,7 @@ button { font-family: inherit; cursor:pointer; }
   border-radius: 50%;
   z-index: 1;
   pointer-events: none;
-  animation: cinematicAuraGlow 2.5s ease-in-out infinite alternate;
+  animation: none;
 }
 
 @keyframes cinematicAuraGlow {
