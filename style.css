@@ -60,36 +60,30 @@ button { font-family: inherit; cursor:pointer; }
 /* ===== LOADER ===== */
 
 .loader {
-  position: fixed;
-  inset: 0;
+  position: fixed; 
+  inset: 0; 
   z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
   justify-content: space-between;
   
-  /* Deep Dark Brown/Espresso Gradient */
+  /* Deep Espresso/Dark Brown Theme */
   background: radial-gradient(circle at center, #1f1a16 0%, #0a0807 100%);
-  overflow: hidden;
-}
-
-#fx-canvas {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+  padding: 50px 20px;
+  box-sizing: border-box;
 }
 
 .loader-content {
-  flex: 1;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 22px;
-  z-index: 2;
+  gap: 24px;
+  flex: 1;
 }
 
+/* Logo ka container - No animation, just static */
 .loader-wrapper {
   position: relative;
   width: 160px;
@@ -97,65 +91,40 @@ button { font-family: inherit; cursor:pointer; }
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
 }
 
-.loader-logo {
-  width: 90px;
-  height: 90px;
+.loader-logo { 
+  width: 120px; 
+  height: 120px; 
   object-fit: contain;
-  z-index: 2;
-  animation: pulse 1.6s ease-in-out infinite;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));
+  /* Soft shadow to match the premium dark look */
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
 }
 
-/* Metallic Gold Spinning Ring */
-.loader-ring {
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  border: 3px solid rgba(139, 115, 85, 0.2);
-  border-top: 3px solid #b8860b; 
-  animation: spin 1.2s linear infinite;
-  filter: drop-shadow(0 0 8px rgba(184, 134, 11, 0.3));
-}
-
-.loader-content p {
+.loader-content p { 
+  color: #c5a059; /* Muted Gold */
+  letter-spacing: 2px; 
+  font-size: 16px;
   margin: 0;
-  font-family: sans-serif; /* Ya aap jo font use kar rahe hain */
-  font-size: 15px;
-  letter-spacing: 1.5px;
-  color: #c5a059; /* Muted Gold Text */
   text-align: center;
   text-transform: uppercase;
-  opacity: 0.9;
 }
 
+/* Footer Section */
 .loader-footer {
-  width: 100%;
   text-align: center;
-  padding-bottom: 22px;
-  z-index: 2;
+  width: 100%;
 }
 
 .loader-footer p {
-  margin: 0;
-  font-size: 11px;
+  color: #a68966; /* Muted Gold/Tan */
+  font-size: 12px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: rgba(139, 115, 85, 0.3);
+  margin: 0;
+  opacity: 0.5;
 }
 
-/* Animations */
-@keyframes spin {
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.07); }
-}
 
 /* ===== APP SHELL ===== */
 .app { position:relative; width:100%; height:100dvh; overflow:hidden; }
