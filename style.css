@@ -59,58 +59,71 @@ button { font-family: inherit; cursor:pointer; }
 
 /* ===== LOADER ===== */
 
-/* ===== LOADER (REFINED STATIC VERSION) ===== */
-
 .loader {
-  position: fixed;
-  inset: 0;
+  position: fixed; 
+  inset: 0; 
   z-index: 9999;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
   justify-content: space-between;
-
-  /* Premium Deep Dark Background */
-  background: radial-gradient(circle at top, #141b2d 0%, #070a12 100%);
-  overflow: hidden;
+  
+  /* Deep Espresso/Dark Brown Theme */
+  background: radial-gradient(circle at center, #1f1a16 0%, #2e1e16 100%);
   padding: 50px 20px;
+  box-sizing: border-box;
 }
 
-/* CENTER AREA */
 .loader-content {
-  flex: 1;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 24px;
+  flex: 1;
 }
 
-/* LOGO - Static and Centered */
-.loader-logo {
-  width: 120px; /* Thoda size adjust kiya hai */
-  height: 120px;
+/* Logo ka container - No animation, just static */
+.loader-wrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-logo { 
+  width: 120px; 
+  height: 120px; 
   object-fit: contain;
+  /* Soft shadow to match the premium dark look */
   filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
 }
 
-/* FOOTER - Vikas Name at bottom */
-.loader-footer {
-  width: 100%;
+.loader-content p { 
+  color: #c5a059; /* Muted Gold */
+  letter-spacing: 2px; 
+  font-size: 16px;
+  margin: 0;
   text-align: center;
-  padding-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Footer Section */
+.loader-footer {
+  text-align: center;
+  width: 100%;
 }
 
 .loader-footer p {
-  margin: 0;
-  font-size: 14px;
+  color: #a68966; /* Muted Gold/Tan */
+  font-size: 12px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #f5c542; /* Gold color for name to pop */
-  font-weight: 500;
+  margin: 0;
+  opacity: 0.5;
 }
-
 
 
 /* ===== APP SHELL ===== */
