@@ -760,28 +760,79 @@ const UI = (() => {
     });
   }
 
-  /* ---------- swipe / touch on board ---------- */
-  function attachBoardSwipe() {
-    let sx = 0, sy = 0, sIdx = -1;
-    boardEl.addEventListener('pointerdown', e => {
-      const t = e.target.closest('.tile');
-      sIdx = t ? Number(t.dataset.pos) : -1;
-      sx = e.clientX; sy = e.clientY;
-    });
-    boardEl.addEventListener('pointerup', e => {
-      if (sIdx < 0) return;
-      const dx = e.clientX - sx, dy = e.clientY - sy;
-      if (Math.hypot(dx, dy) < 12) { sIdx = -1; return; } // treated as click
-      const st = Game.get(), n = st.size;
-      const r = Math.floor(sIdx / n), c = sIdx % n;
-      let target = sIdx;
-      if (Math.abs(dx) > Math.abs(dy)) target = r * n + (dx > 0 ? Math.min(n-1, c+1) : Math.max(0, c-1));
-      else                              target = (dy > 0 ? Math.min(n-1, r+1) : Math.max(0, r-1)) * n + c;
-      // slide *the blank toward us* means click on tile in that line — easier: just use sIdx
-      handleTileClick(sIdx);
-      sIdx = -1;
-    });
-  }
+/* ---------- swipe / touch on board (SMART VERSION) ---------- */
+function attachBoardSwipe() {
+  let sx = 0, sy = 0, startTile = -1;
+
+  boardEl.addEventListener("pointerdown", (e) => {
+    const tile = e.target.closest(".tile");
+    if (!tile) return;
+
+    startTile = Number(tile.dataset.pos);
+    sx = e.clientX;
+    sy = e.clientY;
+  });
+
+  boardEl.addEventListener("pointerup", (e) => {
+    if (startTile < 0) return;
+
+    const dx = e.clientX - sx;
+    const dy = e.clientY - sy;
+
+    const st = Game.get();
+    const n = st.size;
+    const blank = st.blank; // 👉 MUST EXIST in your state
+
+    const r = Math.floor(startTile / n);
+    const c = startTile % n;
+
+    const br = Math.floor(blank / n);
+    const bc = blank % n;
+
+    // =========================
+    // 1. TAP → try move if valid
+    // =========================
+    if (Math.hypot(dx, dy) < 12) {
+      tryMove(startTile);
+      startTile = -1;
+      return;
+    }
+
+    // =========================
+    // 2. SWIPE → direction move
+    // =========================
+    let target = startTile;
+
+    if (Math.abs(dx) > Math.abs(dy)) {
+      target = r * n + (dx > 0 ? c + 1 : c - 1);
+    } else {
+      target = (dy > 0 ? r + 1 : r - 1) * n + c;
+    }
+
+    tryMove(target);
+    startTile = -1;
+  });
+                  }
+
+   /* Move only if adjacent to blank */
+function tryMove(tileIndex) {
+  const st = Game.get();
+  const n = st.size;
+  const blank = st.blank;
+
+  const tr = Math.floor(tileIndex / n);
+  const tc = tileIndex % n;
+
+  const br = Math.floor(blank / n);
+  const bc = blank % n;
+
+  const isAdjacent =
+    (Math.abs(tr - br) + Math.abs(tc - bc)) === 1;
+
+  if (!isAdjacent) return; // ❌ invalid move
+
+  handleTileClick(tileIndex); // ✅ safe move
+         }
 
   /* ---------- keyboard ---------- */
   function attachKeys() {
@@ -1007,3 +1058,7 @@ function buildSolved(n, seq) {
 document.addEventListener('DOMContentLoaded', UI.init);
 
 })();
+
+document.addEventListener("contextmenu", function (e) {
+  if (e.target.tagName === "IMG") e.preventDefault();
+});
