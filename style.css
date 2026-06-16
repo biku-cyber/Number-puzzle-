@@ -58,31 +58,27 @@ button { font-family: inherit; cursor:pointer; }
 .hidden { display:none !important; }
 
 /* ===== LOADER ===== */
-/* ===== LOADER (UPDATED TO MATCH 1000071222.jpg) ===== */
 
 .loader {
   position: fixed;
   inset: 0;
   z-index: 9999;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
-  /* Updated background to match the dark brown theme of 1000071222.jpg */
-  background: radial-gradient(circle at center, #2d2621 0%, #1a1613 100%);
+  
+  /* Deep Dark Brown/Espresso Gradient */
+  background: radial-gradient(circle at center, #1f1a16 0%, #0a0807 100%);
   overflow: hidden;
 }
 
-/* Background FX Canvas */
 #fx-canvas {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
-/* CENTER AREA */
 .loader-content {
   flex: 1;
   width: 100%;
@@ -94,7 +90,6 @@ button { font-family: inherit; cursor:pointer; }
   z-index: 2;
 }
 
-/* WRAPPER (Logo + Ring Container) */
 .loader-wrapper {
   position: relative;
   width: 160px;
@@ -105,45 +100,38 @@ button { font-family: inherit; cursor:pointer; }
   border-radius: 50%;
 }
 
-/* LOGO */
 .loader-logo {
   width: 90px;
   height: 90px;
   object-fit: contain;
   z-index: 2;
   animation: pulse 1.6s ease-in-out infinite;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));
 }
 
-/* SPINNING RING */
+/* Metallic Gold Spinning Ring */
 .loader-ring {
   position: absolute;
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  /* Updated border color to match the gold accents in 1000071222.jpg */
-  border: 3px solid rgba(184, 134, 11, 0.15);
-  border-top: 3px solid #d4af37; 
-
+  border: 3px solid rgba(139, 115, 85, 0.2);
+  border-top: 3px solid #b8860b; 
   animation: spin 1.2s linear infinite;
-
-  /* Glow adjusted to match the warm gold tone */
-  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
+  filter: drop-shadow(0 0 8px rgba(184, 134, 11, 0.3));
 }
 
-/* LOADING TEXT */
 .loader-content p {
   margin: 0;
+  font-family: sans-serif; /* Ya aap jo font use kar rahe hain */
   font-size: 15px;
-  letter-spacing: 1px;
-  /* Using the light tan/gold color for text */
-  color: #d4af37;
+  letter-spacing: 1.5px;
+  color: #c5a059; /* Muted Gold Text */
   text-align: center;
   text-transform: uppercase;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
-/* FOOTER */
 .loader-footer {
   width: 100%;
   text-align: center;
@@ -153,13 +141,13 @@ button { font-family: inherit; cursor:pointer; }
 
 .loader-footer p {
   margin: 0;
-  font-size: 12px;
-  letter-spacing: 2px;
+  font-size: 11px;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: rgba(212, 175, 55, 0.3);
+  color: rgba(139, 115, 85, 0.3);
 }
 
-/* ANIMATIONS */
+/* Animations */
 @keyframes spin {
   100% { transform: rotate(360deg); }
 }
