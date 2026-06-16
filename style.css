@@ -58,27 +58,8 @@ button { font-family: inherit; cursor:pointer; }
 .hidden { display:none !important; }
 
 /* ===== LOADER ===== */
-/* ===== ROOT PREMIUM COLOR SYSTEM ===== */
-:root {
+/* ===== LOADER (UPDATED TO MATCH 1000071222.jpg) ===== */
 
-  /* Background (cinematic dark brown-black) */
-  --bg: radial-gradient(circle at top, #1a120b 0%, #0b0705 60%, #050302 100%);
-
-  /* Gold Accent */
-  --gold: #f5c542;
-
-  /* Glass / Card */
-  --card: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-
-  /* Text */
-  --text: #f5e6c8;
-  --text-soft: rgba(245, 230, 200, 0.72);
-
-  /* Shadow */
-  --shadow-soft: 0 6px 15px rgba(0,0,0,0.25);
-}
-
-/* ===== LOADER ===== */
 .loader {
   position: fixed;
   inset: 0;
@@ -89,11 +70,12 @@ button { font-family: inherit; cursor:pointer; }
   align-items: center;
   justify-content: space-between;
 
-  background: var(--bg);
+  /* Updated background to match the dark brown theme of 1000071222.jpg */
+  background: radial-gradient(circle at center, #2d2621 0%, #1a1613 100%);
   overflow: hidden;
 }
 
-/* FX CANVAS */
+/* Background FX Canvas */
 #fx-canvas {
   position: absolute;
   inset: 0;
@@ -104,26 +86,22 @@ button { font-family: inherit; cursor:pointer; }
 .loader-content {
   flex: 1;
   width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   gap: 22px;
   z-index: 2;
 }
 
-/* WRAPPER */
+/* WRAPPER (Logo + Ring Container) */
 .loader-wrapper {
   position: relative;
   width: 160px;
   height: 160px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
 }
 
@@ -131,40 +109,38 @@ button { font-family: inherit; cursor:pointer; }
 .loader-logo {
   width: 90px;
   height: 90px;
-
   object-fit: contain;
   z-index: 2;
-
   animation: pulse 1.6s ease-in-out infinite;
-
-  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.35));
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.5));
 }
 
-/* RING */
+/* SPINNING RING */
 .loader-ring {
   position: absolute;
   width: 140px;
   height: 140px;
-
   border-radius: 50%;
-
-  border: 3px solid rgba(255,255,255,0.06);
-  border-top: 3px solid var(--gold);
+  /* Updated border color to match the gold accents in 1000071222.jpg */
+  border: 3px solid rgba(184, 134, 11, 0.15);
+  border-top: 3px solid #d4af37; 
 
   animation: spin 1.2s linear infinite;
 
-  filter: drop-shadow(0 0 10px rgba(245, 197, 66, 0.35));
+  /* Glow adjusted to match the warm gold tone */
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
 }
 
 /* LOADING TEXT */
 .loader-content p {
   margin: 0;
-
   font-size: 15px;
   letter-spacing: 1px;
-
-  color: var(--text-soft);
+  /* Using the light tan/gold color for text */
+  color: #d4af37;
   text-align: center;
+  text-transform: uppercase;
+  opacity: 0.8;
 }
 
 /* FOOTER */
@@ -177,29 +153,22 @@ button { font-family: inherit; cursor:pointer; }
 
 .loader-footer p {
   margin: 0;
-
   font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
-
-  color: rgba(245, 230, 200, 0.4);
+  color: rgba(212, 175, 55, 0.3);
 }
 
-/* ===== ANIMATIONS ===== */
+/* ANIMATIONS */
 @keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.07);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
 }
+
 /* ===== APP SHELL ===== */
 .app { position:relative; width:100%; height:100dvh; overflow:hidden; }
 
