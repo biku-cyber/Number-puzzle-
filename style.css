@@ -69,7 +69,7 @@ button { font-family: inherit; cursor:pointer; }
   justify-content: space-between;
   
   /* Deep Espresso/Dark Brown Theme */
-  background: radial-gradient(circle at center, #1f1a16 0%, #2e1e16 100%);
+  background: radial-gradient(circle at center, #2A1710 0%, #1A0F09 100%);
   padding: 50px 20px;
   box-sizing: border-box;
 }
